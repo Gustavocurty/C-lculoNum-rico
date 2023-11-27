@@ -1,20 +1,20 @@
-from sympy import symbols, ln
+from sympy import symbols, ln, exp, cos,sin
 from sympy.plotting import plot
 
 x = symbols('x')
 
 # Plota o gráfico da função
-f_x = (x**3) - 10
+f_x = exp(-2*x) - 4*cos(3*x)
 p1 = plot(f_x, show=True)
 
 # Define a função f(x)
 def f(x): 
-    fx = (x**3) -10
+    fx = exp(-2*x) - 4*cos(3*x)
     return fx
 
 # Define a função para calcular a derivada numericamente
 def fLx(x):
-    h = 0.0000001
+    h = 0.000001
     derivada = ((f(x + h) - f(x)) / h)
     return derivada
 
@@ -27,9 +27,9 @@ def newtonRaphson(fx, fLx, x, iter_max, tol):
         
         if abs(fx(x)) < tol:
             print("O numero de iteraçoes foi:",i)
-            return 'A raiz aproximada é', x
+            return x
     return 'O método falhou após', i, 'iterações'
 
 # Chamar a função Newton-Raphson
-resultado = newtonRaphson(f, fLx, 1, 100, 1e-8)
+resultado = newtonRaphson(f, fLx, 3.5 , 100, 1e-8)
 print(resultado)
