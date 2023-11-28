@@ -4,12 +4,12 @@ from sympy.plotting import plot
 x = symbols('x')
 
 # Plota o gráfico da função
-f_x = exp(-2*x) - 4*cos(3*x)
+f_x = (((x**2) - 1)- sin(x))
 p1 = plot(f_x, show=True)
 
 # Define a função f(x)
 def f(x): 
-    fx = exp(-2*x) - 4*cos(3*x)
+    fx = (((x**2) - 1)- sin(x))
     return fx
 
 # Define a função para calcular a derivada numericamente
@@ -31,5 +31,5 @@ def newtonRaphson(fx, fLx, x, iter_max, tol):
     return 'O método falhou após', i, 'iterações'
 
 # Chamar a função Newton-Raphson
-resultado = newtonRaphson(f, fLx, 3.5 , 100, 1e-8)
+resultado = newtonRaphson(f, fLx, 1.4 , 100, 1e-8)
 print(resultado)

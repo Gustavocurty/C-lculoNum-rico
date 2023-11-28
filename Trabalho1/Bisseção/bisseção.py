@@ -7,12 +7,12 @@ x = symbols('x')
 
 # Plota o gráfico da função
 
-f_x = ln(2*x) - exp(-x**2)
+f_x = (((x**2) - 1)- sin(x))
 p1 = plot(f_x, show=True)
 
 #Define a função f(x)
 def f(x): 
-    y = ln(2*x) - exp(-x**2)
+    y = (((x**2) - 1)- sin(x))
     return y
 
 #Define o algoritimo da bisseção como função

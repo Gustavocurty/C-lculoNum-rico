@@ -1,4 +1,5 @@
 import sympy as sp
+from math import e
 
 def trapezoidal_rule(func, a, b, n):
     x = sp.symbols('x')
